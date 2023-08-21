@@ -1,0 +1,47 @@
+{
+  "name": "@sec-ant/set-cookie-parser",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vitest",
+    "type-check": "tsc --noEmit --emitDeclarationOnly false",
+    "prebuild": "npm run type-check",
+    "build": "vite build",
+    "postbuild": "tsc",
+    "test": "vitest run --coverage",
+    "ncu": "ncu -u && npm i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sec-ant/set-cookie-parser"
+  },
+  "homepage": "https://github.com/Sec-ant/set-cookie-parser",
+  "bugs": {
+    "url": "https://github.com/Sec-ant/set-cookie-parser/issues"
+  },
+  "keywords": [
+    "es",
+    "esm",
+    "set-cookie",
+    "set-cookie-parser",
+    "cookie"
+  ],
+  "author": "Ze-Zheng Wu",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^0.34.2",
+    "@vitest/ui": "^0.34.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vitest": "^0.34.2"
+  }
+}
