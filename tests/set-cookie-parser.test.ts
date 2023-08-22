@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { parse } from "../src/index";
+import { SetCookieValueList, parse } from "../src/index";
 
 describe("set-cookie-parser", () => {
   it("should parse a simple set-cookie header", () => {
@@ -12,19 +12,21 @@ describe("set-cookie-parser", () => {
   });
 
   it("should return empty array on falsy input", () => {
-    let cookieStr: any = "";
+    let cookieStr: string | null | undefined = "";
     let actual = parse(cookieStr);
     let expected = [];
 
     expect(actual).toEqual(expected);
 
     cookieStr = null;
+    // @ts-expect-error: test
     actual = parse(cookieStr);
     expected = [];
 
     expect(actual).toEqual(expected);
 
     cookieStr = undefined;
+    // @ts-expect-error: test
     actual = parse(cookieStr);
     expected = [];
 
@@ -157,19 +159,21 @@ describe("set-cookie-parser", () => {
   });
 
   it("should return empty object on falsy input when result options is set to map", () => {
-    let cookieStr: any = "";
+    let cookieStr: string | null | undefined = "";
     let actual = parse(cookieStr, { map: true });
     let expected = {};
 
     expect(actual).toEqual(expected);
 
     cookieStr = null;
+    // @ts-expect-error: test
     actual = parse(cookieStr, { map: true });
     expected = {};
 
     expect(actual).toEqual(expected);
 
     cookieStr = undefined;
+    // @ts-expect-error: test
     actual = parse(cookieStr, { map: true });
     expected = {};
 
@@ -177,8 +181,8 @@ describe("set-cookie-parser", () => {
   });
 
   it("should have empty name string, and value is the name-value-pair if the name-value-pair string lacks a = character", () => {
-    let actual: any = parse("foo;");
-    let expected: any = [{ name: "", value: "foo" }];
+    let actual: SetCookieValueList = parse("foo;");
+    let expected: SetCookieValueList = [{ name: "", value: "foo" }];
 
     expect(actual).toEqual(expected);
 

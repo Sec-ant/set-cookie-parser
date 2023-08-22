@@ -12,25 +12,22 @@ interface ParseToListOptions extends ParseStringOptions {
 
 export type ParseOptions = ParseToMapOptions | ParseToListOptions;
 
-export type SetCookieValue = {
-  name?: string;
-  value: string;
-  domain?: string;
-  expires?: Date;
-  httpOnly?: boolean;
-  maxAge?: number;
-  path?: string;
-  sameSite?: "Lax" | "Strict" | "None";
-  secure?: boolean;
-} & {
-  [key: string]: string;
-};
+export type SetCookieValue =
+  | {
+      name?: string;
+      value: string;
+      domain?: string;
+      expires?: Date;
+      httpOnly?: boolean;
+      maxAge?: number;
+      path?: string;
+      sameSite?: "Lax" | "Strict" | "None";
+      secure?: boolean;
+    } & Record<string, unknown>;
 
 export type SetCookieValueList = SetCookieValue[];
 
-export interface SetCookieValueMap {
-  [key: string]: SetCookieValue;
-}
+export type SetCookieValueMap = Record<string, SetCookieValue>;
 
 const DEFAULT_PARSE_STRING_OPTIONS: Required<ParseStringOptions> = {
   decodeValues: true,
@@ -49,7 +46,10 @@ export function parseString(
 ) {
   const parts = setCookieValue.split(";").filter((str) => str.trim() !== "");
   const nameValuePair = parts.shift()!;
-  let { name, value } = parseNameValuePair(nameValuePair);
+
+  const parsedNameValuePair = parseNameValuePair(nameValuePair);
+  const name = parsedNameValuePair.name;
+  let value = parsedNameValuePair.value;
 
   if (decodeValues) {
     try {
