@@ -1,10 +1,12 @@
-import { defineConfig } from "vitest/config";
+/// <reference types="vitest" />
+import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    target: "esnext",
     lib: {
-      entry: { index: "./src/index.ts" },
+      entry: {
+        index: "./src/index.ts",
+      },
       formats: ["es", "iife"],
       name: "SetCookieParser",
       fileName: (format, entryName) =>
