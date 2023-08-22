@@ -2,7 +2,7 @@
   "name": "@sec-ant/set-cookie-parser",
   "description": "Yet another \"Set-Cookie\" parser",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "files": [
     "./dist"
