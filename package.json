@@ -31,6 +31,10 @@
   },
   "license": "MIT",
   "config": {},
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  },
   "scripts": {
     "type-check": "tsc --noEmit --emitDeclarationOnly false",
     "prebuild": "npm run type-check",
@@ -45,6 +49,9 @@
     "postncu": "npm i"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@semantic-release/git": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "@vitest/browser": "^0.34.2",
@@ -53,6 +60,7 @@
     "eslint": "^8.47.0",
     "npm-check-updates": "^16.13.0",
     "playwright": "^1.37.1",
+    "semantic-release": "^21.1.1",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vitest": "^0.34.2"
