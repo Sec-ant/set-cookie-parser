@@ -58,7 +58,7 @@
     "@vitest/coverage-istanbul": "^0.34.4",
     "@vitest/ui": "^0.34.4",
     "eslint": "^8.49.0",
-    "npm-check-updates": "^16.14.2",
+    "npm-check-updates": "^16.14.4",
     "playwright": "^1.38.0",
     "semantic-release": "^21.1.1",
     "typescript": "^5.2.2",
