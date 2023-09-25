@@ -57,10 +57,10 @@
     "@vitest/browser": "^0.34.5",
     "@vitest/coverage-istanbul": "^0.34.5",
     "@vitest/ui": "^0.34.5",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "npm-check-updates": "^16.14.4",
     "playwright": "^1.38.1",
-    "semantic-release": "^22.0.1",
+    "semantic-release": "^22.0.5",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vitest": "^0.34.5"
