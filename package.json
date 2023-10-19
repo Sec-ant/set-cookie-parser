@@ -62,7 +62,7 @@
     "playwright": "^1.39.0",
     "semantic-release": "^22.0.5",
     "typescript": "^5.2.2",
-    "vite": "^4.4.11",
+    "vite": "^4.5.0",
     "vitest": "^0.34.6"
   }
 }
