@@ -57,12 +57,12 @@
     "@vitest/browser": "^1.0.4",
     "@vitest/coverage-istanbul": "^1.0.4",
     "@vitest/ui": "^1.0.4",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "npm-check-updates": "^16.14.12",
     "playwright": "^1.40.1",
     "semantic-release": "^22.0.12",
     "typescript": "^5.3.3",
-    "vite": "^5.0.9",
+    "vite": "^5.0.10",
     "vitest": "^1.0.4"
   }
 }
